@@ -8,8 +8,8 @@
 <body>
     <h1>フォーム入力</h1>
     <form action="confirm.php" method="post" accept-charset="UTF-8">
-        <label for="username">名前:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <label for="name">名前:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
         <label for="age">年齢:</label>
         <input type="number" id="age" name="age" min="0" max="150" required><br><br>
@@ -28,7 +28,6 @@
 
         <label for="gender">性別:</label>
         <select id="gender" name="gender" required>
-            <option value="">選択してください</option>
             <option value="male">男性</option>
             <option value="female">女性</option>
             <option value="other">その他</option>
