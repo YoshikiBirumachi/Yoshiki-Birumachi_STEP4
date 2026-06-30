@@ -29,12 +29,16 @@
                 echo "<p class=\"error-message\">名前はひらがな、カタカナ、漢字、英字のみ使用できます。</p>";
             } elseif (!is_numeric($age) || $age < 0 || $age > 150) {
                 echo "<p class=\"error-message\">年齢は0〜150の間で入力してください。</p>";
-            }  elseif (!preg_match("/^[0-9-]+$/", $phone)) {
+            }  elseif (!preg_match("/^\d{2,4}-\d{2,4}-\d{3,4}$/", $phone)) {
                 echo "<p class=\"error-message\">電話番号は半角数字とハイフンのみ使用できます。</p>";
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo "<p class=\"error-message\">メールアドレスの形式が正しくありません。</p>";
             } elseif (!preg_match("/^[ぁ-んァ-ヶー一-龠a-zA-Z0-9\-]+$/u", $address)) {
                 echo "<p class=\"error-message\">住所はひらがな、カタカナ、漢字、英字、半角数字、ハイフンのみ使用できます。</p>";
+            } elseif (!preg_match("/^[ぁ-んァ-ヶー一-龠a-zA-Z0-9\s]+$/u", $question)) {
+                echo "<p class=\"error-message\">質問はひらがな、カタカナ、漢字、英字、半角数字、スペースのみ使用できます。</p>";
+            } elseif (!array_key_exists($gender, $genderLabels)) {
+                echo "<p class=\"error-message\">性別は男性、女性、その他のいずれかを選択してください。</p>";
             } else {
                 $genderDisplay = $genderLabels[$gender] ?? $gender;
 
@@ -44,6 +48,11 @@
                 echo "<div class=\"confirmation-item\"><label>電話番号</label><p>" . htmlspecialchars($phone, ENT_QUOTES, "UTF-8") . "</p></div>";
                 echo "<div class=\"confirmation-item\"><label>メールアドレス</label><p>" . htmlspecialchars($email, ENT_QUOTES, "UTF-8") . "</p></div>";
                 echo "<div class=\"confirmation-item\"><label>住所</label><p>" . htmlspecialchars($address, ENT_QUOTES, "UTF-8") . "</p></div>";
+<<<<<<< HEAD
+=======
+                echo "<div class=\"confirmation-item\"><label>質問</label><p>" . htmlspecialchars($question, ENT_QUOTES, "UTF-8") . "</p></div>";
+                echo "<div class=\"confirmation-item\"><label>性別</label><p>" . htmlspecialchars($genderDisplay, ENT_QUOTES, "UTF-8") . "</p></div>";
+>>>>>>> feature-update
             }
         } else {
             echo "<p class=\"error-message\">データが送信されていません。</p>";
