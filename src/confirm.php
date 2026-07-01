@@ -48,11 +48,8 @@
                 echo "<div class=\"confirmation-item\"><label>電話番号</label><p>" . htmlspecialchars($phone, ENT_QUOTES, "UTF-8") . "</p></div>";
                 echo "<div class=\"confirmation-item\"><label>メールアドレス</label><p>" . htmlspecialchars($email, ENT_QUOTES, "UTF-8") . "</p></div>";
                 echo "<div class=\"confirmation-item\"><label>住所</label><p>" . htmlspecialchars($address, ENT_QUOTES, "UTF-8") . "</p></div>";
-<<<<<<< HEAD
-=======
                 echo "<div class=\"confirmation-item\"><label>質問</label><p>" . htmlspecialchars($question, ENT_QUOTES, "UTF-8") . "</p></div>";
                 echo "<div class=\"confirmation-item\"><label>性別</label><p>" . htmlspecialchars($genderDisplay, ENT_QUOTES, "UTF-8") . "</p></div>";
->>>>>>> feature-update
             }
         } else {
             echo "<p class=\"error-message\">データが送信されていません。</p>";
