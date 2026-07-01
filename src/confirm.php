@@ -28,8 +28,8 @@
             if (!preg_match("/^[ぁ-んァ-ヶー一-龠a-zA-Z\s]+$/u", $name)) {
                 echo "<p class=\"error-message\">名前はひらがな、カタカナ、漢字、英字のみ使用できます。</p>";
             } elseif (!is_numeric($age) || $age < 0 || $age > 150) {
-                echo "<p class=\"error-message\">年齢は0〜150の間で入力してください。</p>";
-            }  elseif (!preg_match("/^\d{2,4}-\d{2,4}-\d{3,4}$/", $phone)) {
+                echo "<p class=\"error-message\">年齢は0から150の間で入力してください。</p>";
+            }  elseif (!preg_match("/^[0-9-]+$/", $phone)) {
                 echo "<p class=\"error-message\">電話番号は半角数字とハイフンのみ使用できます。</p>";
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo "<p class=\"error-message\">メールアドレスの形式が正しくありません。</p>";
